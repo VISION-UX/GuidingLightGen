@@ -4,6 +4,8 @@ the tool we all needed.
 
 # BUILDING THE TOOL
 
+clone/download the repo
+
 download Godot 4 from here
 
 https://downloads.tuxfamily.org/godotengine/4.0/beta1/
