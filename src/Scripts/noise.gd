@@ -12,7 +12,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print("Death/Noise/:// frame TIMER: " + str(frameTimer) + " SEED: " + str(self.texture.noise.seed)) # for debug
 	frameTimer += 1 # make sure we dont get any glitches
 	if frameTimer == frameTimerTime:
 		
