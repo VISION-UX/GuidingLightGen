@@ -1,14 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://blew0vcipmdqn"]
+[gd_scene load_steps=21 format=3 uid="uid://cvkgp4jhps7oy"]
 
 [ext_resource type="PackedScene" uid="uid://d1881pb0544j4" path="res://Scenes/theGradientThingy.tscn" id="1_3apbu"]
-[ext_resource type="Script" path="res://Scripts/MainDeathX.gd" id="1_ekkg6"]
-[ext_resource type="Script" path="res://Scripts/noise.gd" id="1_r4wn2"]
-[ext_resource type="Script" path="res://Scripts/PlayTool.gd" id="3_0a0hh"]
+[ext_resource type="Script" path="res://Scripts/death_scene.gd" id="1_ekkg6"]
+[ext_resource type="Script" path="res://Scripts/death_noise.gd" id="1_r4wn2"]
 [ext_resource type="Texture2D" uid="uid://cttx5kon2ea0v" path="res://Assets/logoREMADEVIZZ NOT EXTRACTED!!!!!!!!!!!!.png" id="3_d00ko"]
-[ext_resource type="Script" path="res://Scripts/randoCam.gd" id="3_saj8o"]
-[ext_resource type="FontFile" uid="uid://bb5nsj0m8ktax" path="res://Fonts/SourceSans3-Regular.ttf" id="5_u376h"]
-[ext_resource type="AudioStream" uid="uid://bwhcmyvgx7bls" path="res://Assets/deathVizz.ogg" id="6_gke6k"]
-[ext_resource type="Script" path="res://Scripts/daText.gd" id="8_evu51"]
+[ext_resource type="Script" path="res://Scripts/death_camera.gd" id="3_saj8o"]
+[ext_resource type="AudioStream" uid="uid://uxje4tq2qpn6" path="res://Assets/deathVizz.ogg" id="6_gke6k"]
+[ext_resource type="FontFile" uid="uid://bpf2vytqv7l48" path="res://Fonts/Nunito-Light.ttf" id="7_bsvwa"]
+[ext_resource type="Script" path="res://Scripts/death_text.gd" id="8_evu51"]
 
 [sub_resource type="Gradient" id="Gradient_vynfy"]
 offsets = PackedFloat32Array(0.0183486, 1)
@@ -53,7 +52,7 @@ step = 0.05
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LogoRemadevizzNotExtracted!!!!!!!!!!!!:scale:x")
+tracks/0/path = NodePath("Logo:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -64,7 +63,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LogoRemadevizzNotExtracted!!!!!!!!!!!!:scale:y")
+tracks/1/path = NodePath("Logo:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -75,7 +74,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera2d:shak")
+tracks/2/path = NodePath("Camera:shake")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -87,7 +86,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Camera2d:intensityShak")
+tracks/3/path = NodePath("Camera:shake_intensity")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -98,7 +97,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Camera2d/theGradientThingy:modulate")
+tracks/4/path = NodePath("Camera/Gradient:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -110,7 +109,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ColorRect:modulate")
+tracks/5/path = NodePath("BG:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -122,7 +121,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("LogoRemadevizzNotExtracted!!!!!!!!!!!!:modulate")
+tracks/6/path = NodePath("Logo:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -134,7 +133,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Camera2d:funkyWibble")
+tracks/7/path = NodePath("Camera:wibble")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -158,7 +157,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("AnimationPlayer/AudioStreamPlayer2d:playing")
+tracks/9/path = NodePath("AnimationPlayer/AudioStreamPlayer:playing")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -170,7 +169,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Text:Enabled")
+tracks/10/path = NodePath("Text:enabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -185,7 +184,7 @@ resource_name = "reset"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LogoRemadevizzNotExtracted!!!!!!!!!!!!:scale:y")
+tracks/0/path = NodePath("Logo:scale:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -196,7 +195,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LogoRemadevizzNotExtracted!!!!!!!!!!!!:scale:x")
+tracks/1/path = NodePath("Logo:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -247,25 +246,21 @@ _data = {
 "fadeStart": SubResource("Animation_pf2sr")
 }
 
-[node name="death" type="Node2D"]
+[node name="Death" type="Node2D"]
 script = ExtResource("1_ekkg6")
 
-[node name="noise" type="Sprite2D" parent="."]
+[node name="Noise" type="Sprite2D" parent="."]
 scale = Vector2(44.2068, 3.16852)
 texture = SubResource("NoiseTexture2D_ydkhr")
 script = ExtResource("1_r4wn2")
-maxSeed = 500
 
-[node name="noise2" type="Sprite2D" parent="."]
+[node name="Noise_2" type="Sprite2D" parent="."]
 position = Vector2(0, -1.97558)
 scale = Vector2(3.169, 2.06106)
 texture = SubResource("NoiseTexture2D_ri4ve")
 script = ExtResource("1_r4wn2")
-maxSeed = 500
 
-[node name="LogoRemadevizzNotExtracted!!!!!!!!!!!!" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(3.02711, 3.02711)
+[node name="Logo" type="Sprite2D" parent="."]
 texture = ExtResource("3_d00ko")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -273,13 +268,12 @@ autoplay = "deathHHHH"
 libraries = {
 "": SubResource("AnimationLibrary_cdlux")
 }
-script = ExtResource("3_0a0hh")
 
-[node name="AudioStreamPlayer2d" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
 stream = ExtResource("6_gke6k")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="BG" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
 offset_left = -684.0
 offset_top = -424.0
 offset_right = -644.0
@@ -287,36 +281,34 @@ offset_bottom = -384.0
 scale = Vector2(35.3553, 21.8621)
 color = Color(1, 0, 0, 1)
 
-[node name="Camera2d" type="Camera2D" parent="."]
-rotating = true
+[node name="Camera" type="Camera2D" parent="."]
+ignore_rotation = false
 current = true
 smoothing_enabled = true
 smoothing_speed = 0.563
 script = ExtResource("3_saj8o")
-intensity = 10
-funkyWibble = true
-frameTimerTimeWIBBLE = 60
+shake_intensity = 4.12296
+shake = true
 
-[node name="theGradientThingy" parent="Camera2d" instance=ExtResource("1_3apbu")]
+[node name="Gradient" parent="Camera" instance=ExtResource("1_3apbu")]
 modulate = Color(1, 0, 0.223529, 1)
 scale = Vector2(1.09099, 0.869459)
 
 [node name="Text" type="Label" parent="."]
-offset_left = -537.0
+offset_left = -414.0
 offset_top = -40.0
-offset_right = 544.0
+offset_right = 421.0
 offset_bottom = 102.0
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.670588, 0.921569, 0.933333, 1)
-theme_override_fonts/font = ExtResource("5_u376h")
-theme_override_font_sizes/font_size = 55
+theme_override_fonts/font = ExtResource("7_bsvwa")
+theme_override_font_sizes/font_size = 60
 text = "text"
 horizontal_alignment = 1
 autowrap_mode = 3
 script = ExtResource("8_evu51")
-Enabled = true
-frameTimerTime = 120
 
-[node name="poopoopaa" type="AnimationPlayer" parent="Text"]
+[node name="Animator" type="AnimationPlayer" parent="Text"]
 libraries = {
 "": SubResource("AnimationLibrary_vggp8")
 }

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bb5nsj0m8ktax"
-path="res://.godot/imported/SourceSans3-Regular.ttf-a802ad989c557f1096e487fe25e49383.fontdata"
+uid="uid://bpf2vytqv7l48"
+path="res://.godot/imported/Nunito-Light.ttf-3eb7ce7f2756ef9dbc23644583987ce2.fontdata"
 
 [deps]
 
-source_file="res://Fonts/SourceSans3-Regular.ttf"
-dest_files=["res://.godot/imported/SourceSans3-Regular.ttf-a802ad989c557f1096e487fe25e49383.fontdata"]
+source_file="res://Fonts/Nunito-Light.ttf"
+dest_files=["res://.godot/imported/Nunito-Light.ttf-3eb7ce7f2756ef9dbc23644583987ce2.fontdata"]
 
 [params]
 
