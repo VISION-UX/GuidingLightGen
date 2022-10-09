@@ -1,0 +1,314 @@
+[gd_scene load_steps=21 format=3 uid="uid://cvkgp4jhps7oy"]
+
+[ext_resource type="PackedScene" uid="uid://d1881pb0544j4" path="res://Scenes/theGradientThingy.tscn" id="1_3apbu"]
+[ext_resource type="Script" path="res://Scripts/death_scene.gd" id="1_ekkg6"]
+[ext_resource type="Script" path="res://Scripts/death_noise.gd" id="1_r4wn2"]
+[ext_resource type="Texture2D" uid="uid://cttx5kon2ea0v" path="res://Assets/logoREMADEVIZZ NOT EXTRACTED!!!!!!!!!!!!.png" id="3_d00ko"]
+[ext_resource type="Script" path="res://Scripts/death_camera.gd" id="3_saj8o"]
+[ext_resource type="AudioStream" uid="uid://uxje4tq2qpn6" path="res://Assets/deathVizz.ogg" id="6_gke6k"]
+[ext_resource type="FontFile" uid="uid://bpf2vytqv7l48" path="res://Fonts/Nunito-Light.ttf" id="7_bsvwa"]
+[ext_resource type="Script" path="res://Scripts/death_text.gd" id="8_evu51"]
+
+[sub_resource type="Gradient" id="Gradient_vynfy"]
+offsets = PackedFloat32Array(0.0183486, 1)
+colors = PackedColorArray(0.0862745, 0.172549, 0.203922, 1, 0.0392157, 0.105882, 0.137255, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g854t"]
+noise_type = 3
+frequency = 1.0
+offset = Vector3(1, 0, 0)
+fractal_octaves = 10
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ydkhr"]
+width = 73
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_vynfy")
+noise = SubResource("FastNoiseLite_g854t")
+
+[sub_resource type="Gradient" id="Gradient_wothx"]
+offsets = PackedFloat32Array(0.0183486, 1)
+colors = PackedColorArray(0.0256545, 0.0725526, 0.0902106, 1, 0.0392157, 0.105882, 0.137255, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ojxcr"]
+noise_type = 3
+seed = 4
+frequency = 1.0
+offset = Vector3(1, 0, 0)
+fractal_octaves = 10
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri4ve"]
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_wothx")
+noise = SubResource("FastNoiseLite_ojxcr")
+
+[sub_resource type="Animation" id="Animation_jieu3"]
+resource_name = "deathHHHH"
+length = 20.0
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(22.5873, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 1, 0, 3.02711, -0.25, 0, 1, 0),
+"times": PackedFloat32Array(0, 0.4, 1.5, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(22.5873, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 1, 0, 3.02711, -0.25, 0, 1, 0),
+"times": PackedFloat32Array(0, 0.4, 1.5, 3)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera:shake")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.35, 0.4, 1.1, 1.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera:shake_intensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.4, 1.15)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/Gradient:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0.223529, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BG:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.5, 2.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.156863), Color(1, 1, 1, 0.156863), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Logo:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera:wibble")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.45, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Text:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.7, 2.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/AudioStreamPlayer:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 19.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Text:enabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.7, 2.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ypq38"]
+resource_name = "reset"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10.931, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10.931, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdlux"]
+_data = {
+"deathHHHH": SubResource("Animation_jieu3"),
+"reset": SubResource("Animation_ypq38")
+}
+
+[sub_resource type="Animation" id="Animation_4m6ln"]
+resource_name = "fadeEnd"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pf2sr"]
+resource_name = "fadeStart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vggp8"]
+_data = {
+"fadeEnd": SubResource("Animation_4m6ln"),
+"fadeStart": SubResource("Animation_pf2sr")
+}
+
+[node name="Death" type="Node2D"]
+script = ExtResource("1_ekkg6")
+
+[node name="Noise" type="Sprite2D" parent="."]
+scale = Vector2(44.2068, 3.16852)
+texture = SubResource("NoiseTexture2D_ydkhr")
+script = ExtResource("1_r4wn2")
+
+[node name="Noise_2" type="Sprite2D" parent="."]
+position = Vector2(0, -1.97558)
+scale = Vector2(3.169, 2.06106)
+texture = SubResource("NoiseTexture2D_ri4ve")
+script = ExtResource("1_r4wn2")
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture = ExtResource("3_d00ko")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "deathHHHH"
+libraries = {
+"": SubResource("AnimationLibrary_cdlux")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("6_gke6k")
+
+[node name="BG" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+offset_left = -684.0
+offset_top = -424.0
+offset_right = -644.0
+offset_bottom = -384.0
+scale = Vector2(35.3553, 21.8621)
+color = Color(1, 0, 0, 1)
+
+[node name="Camera" type="Camera2D" parent="."]
+ignore_rotation = false
+current = true
+smoothing_enabled = true
+smoothing_speed = 0.563
+script = ExtResource("3_saj8o")
+shake_intensity = 4.12296
+shake = true
+
+[node name="Gradient" parent="Camera" instance=ExtResource("1_3apbu")]
+modulate = Color(1, 0, 0.223529, 1)
+scale = Vector2(1.09099, 0.869459)
+
+[node name="Text" type="Label" parent="."]
+offset_left = -414.0
+offset_top = -40.0
+offset_right = 421.0
+offset_bottom = 102.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.670588, 0.921569, 0.933333, 1)
+theme_override_fonts/font = ExtResource("7_bsvwa")
+theme_override_font_sizes/font_size = 60
+text = "text"
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("8_evu51")
+
+[node name="Animator" type="AnimationPlayer" parent="Text"]
+libraries = {
+"": SubResource("AnimationLibrary_vggp8")
+}
