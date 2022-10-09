@@ -1,6 +1,6 @@
 extends Label
 
-var myAss:Array = ["You died to..", "What..?", "Rush, Ambush, Hide and Halt!", "That's not possible!", "Sorry player!"]
+@export var myAss:Array
 @export var Enabled = false
 @export var frameTimerTime = 60
 var frameTimer = 0
@@ -8,6 +8,8 @@ var frames = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if myAss == []:
+		myAss = self.get_parent().myassInst
 	self.text = myAss[frames]
 	frames = 1
 
