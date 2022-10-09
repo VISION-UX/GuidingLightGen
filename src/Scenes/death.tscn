@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://blew0vcipmdqn"]
+[gd_scene load_steps=22 format=3 uid="uid://blew0vcipmdqn"]
 
 [ext_resource type="PackedScene" uid="uid://d1881pb0544j4" path="res://Scenes/theGradientThingy.tscn" id="1_3apbu"]
 [ext_resource type="Script" path="res://Scripts/MainDeathX.gd" id="1_ekkg6"]
@@ -27,6 +27,24 @@ seamless = true
 seamless_blend_skirt = 1.0
 color_ramp = SubResource("Gradient_vynfy")
 noise = SubResource("FastNoiseLite_g854t")
+
+[sub_resource type="Gradient" id="Gradient_wothx"]
+offsets = PackedFloat32Array(0.0183486, 1)
+colors = PackedColorArray(0.0256545, 0.0725526, 0.0902106, 1, 0.0392157, 0.105882, 0.137255, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ojxcr"]
+noise_type = 3
+seed = 4
+frequency = 1.0
+offset = Vector3(1, 0, 0)
+fractal_octaves = 10
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri4ve"]
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_wothx")
+noise = SubResource("FastNoiseLite_ojxcr")
 
 [sub_resource type="Animation" id="Animation_jieu3"]
 resource_name = "deathHHHH"
@@ -235,6 +253,13 @@ script = ExtResource("1_ekkg6")
 [node name="noise" type="Sprite2D" parent="."]
 scale = Vector2(44.2068, 3.16852)
 texture = SubResource("NoiseTexture2D_ydkhr")
+script = ExtResource("1_r4wn2")
+maxSeed = 500
+
+[node name="noise2" type="Sprite2D" parent="."]
+position = Vector2(0, -1.97558)
+scale = Vector2(3.169, 2.06106)
+texture = SubResource("NoiseTexture2D_ri4ve")
 script = ExtResource("1_r4wn2")
 maxSeed = 500
 
