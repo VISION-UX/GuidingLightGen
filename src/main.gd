@@ -14,7 +14,7 @@ func _process(delta):
 func on_start():
 	var scene = load("res://Scenes/death.tscn").instantiate()
 	var script = load("res://Scripts/daText.gd")
-	scene.myassInst = [$text1.text, $text2.text ,$text3.text, $text4.text, $text5.text]
+	scene.myassInst = $text1.text.split("\n")
 	print(scene.myassInst)
 	for i in self.get_child_count():
 		remove_child(get_child(i))

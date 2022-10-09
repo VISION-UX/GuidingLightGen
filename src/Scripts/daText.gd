@@ -22,7 +22,8 @@ func _process(delta):
 			
 			frameTimer = 0 
 			
-			if frames <= 4:
+			if frames <= myAss.size()-1:
+				
 				$poopoopaa.play("fadeStart")
 				self.text = myAss[frames]
 				$poopoopaa.play("fadeEnd")

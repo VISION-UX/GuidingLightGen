@@ -2,8 +2,6 @@ extends Camera2D
 @export var intensity = 1
 @export var intensityShak = 1
 @export var shak = false
-@export var funkyWibble = false
-@export var maxSeed = 100
 @export var frameTimerTime = 2
 @export var frameTimerTimeWIBBLE = 30
 var frameTimer = 0
@@ -11,12 +9,6 @@ var frameTimerWIBBLE = 0
 var tempx = 0.0
 var tempy = 0.0
 var tempr = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	frameTimerWIBBLE += 1 # make sure we dont get any glitches
 	if frameTimerWIBBLE == frameTimerTimeWIBBLE:

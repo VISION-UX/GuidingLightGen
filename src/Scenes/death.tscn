@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d1881pb0544j4" path="res://Scenes/theGradientThingy.tscn" id="1_3apbu"]
 [ext_resource type="Script" path="res://Scripts/MainDeathX.gd" id="1_ekkg6"]
 [ext_resource type="Script" path="res://Scripts/noise.gd" id="1_r4wn2"]
-[ext_resource type="Script" path="res://Scripts/PlayTool.gd" id="3_0a0hh"]
 [ext_resource type="Texture2D" uid="uid://cttx5kon2ea0v" path="res://Assets/logoREMADEVIZZ NOT EXTRACTED!!!!!!!!!!!!.png" id="3_d00ko"]
 [ext_resource type="Script" path="res://Scripts/randoCam.gd" id="3_saj8o"]
 [ext_resource type="FontFile" uid="uid://bb5nsj0m8ktax" path="res://Fonts/SourceSans3-Regular.ttf" id="5_u376h"]
@@ -211,6 +210,8 @@ _data = {
 "reset": SubResource("Animation_ypq38")
 }
 
+[sub_resource type="GDScript" id="GDScript_13i42"]
+
 [sub_resource type="Animation" id="Animation_4m6ln"]
 resource_name = "fadeEnd"
 tracks/0/type = "value"
@@ -261,7 +262,7 @@ position = Vector2(0, -1.97558)
 scale = Vector2(3.169, 2.06106)
 texture = SubResource("NoiseTexture2D_ri4ve")
 script = ExtResource("1_r4wn2")
-maxSeed = 500
+maxSeed = 1000
 
 [node name="LogoRemadevizzNotExtracted!!!!!!!!!!!!" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -273,7 +274,7 @@ autoplay = "deathHHHH"
 libraries = {
 "": SubResource("AnimationLibrary_cdlux")
 }
-script = ExtResource("3_0a0hh")
+script = SubResource("GDScript_13i42")
 
 [node name="AudioStreamPlayer2d" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
 stream = ExtResource("6_gke6k")
@@ -294,7 +295,6 @@ smoothing_enabled = true
 smoothing_speed = 0.563
 script = ExtResource("3_saj8o")
 intensity = 10
-funkyWibble = true
 frameTimerTimeWIBBLE = 60
 
 [node name="theGradientThingy" parent="Camera2d" instance=ExtResource("1_3apbu")]
