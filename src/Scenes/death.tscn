@@ -193,21 +193,6 @@ _data = {
 "reset": SubResource("Animation_ypq38")
 }
 
-[sub_resource type="Animation" id="Animation_pf2sr"]
-resource_name = "fadeStart"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_4m6ln"]
 resource_name = "fadeEnd"
 tracks/0/type = "value"
@@ -221,6 +206,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pf2sr"]
+resource_name = "fadeStart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vggp8"]
@@ -285,7 +285,7 @@ offset_bottom = 102.0
 theme_override_colors/font_color = Color(0.670588, 0.921569, 0.933333, 1)
 theme_override_fonts/font = ExtResource("5_u376h")
 theme_override_font_sizes/font_size = 55
-text = ".... suck me off please im really fucking horny rn please!!!!!"
+text = "text"
 horizontal_alignment = 1
 autowrap_mode = 3
 script = ExtResource("8_evu51")
