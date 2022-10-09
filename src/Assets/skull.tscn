@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvvx5crxqydro"]
+
+[ext_resource type="Texture2D" uid="uid://bme1cfqnlc761" path="res://Assets/skull.png" id="1_hhc3j"]
+
+[node name="skull" type="Node2D"]
+
+[node name="Skull" type="Sprite2D" parent="."]
+scale = Vector2(0.0938491, 0.0938491)
+texture = ExtResource("1_hhc3j")
