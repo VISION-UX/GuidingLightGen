@@ -26,7 +26,7 @@ func _process(delta):
 		frameTimerWIBBLE = 0 
 	offset.x = lerp(offset.x, tempx, 0.0125)
 	offset.y =  lerp(offset.y, tempy, 0.0125)
-	rotation = lerp_angle(rotation, deg_to_rad(tempr), 0.0125)
+	#rotation = lerp_angle(rotation, deg_to_rad(tempr), 0.0125)
 	frameTimer += 1 # make sure we dont get any glitches
 	if frameTimer == frameTimerTime:
 		

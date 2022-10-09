@@ -1,3 +1,56 @@
-[gd_scene format=3 uid="uid://yeuoneq6obsj"]
+[gd_scene load_steps=2 format=3 uid="uid://yeuoneq6obsj"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_7f8cd"]
 
 [node name="Node2d" type="Node2D"]
+script = ExtResource("1_7f8cd")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 60.0
+offset_top = -339.0
+offset_right = 592.0
+offset_bottom = 343.0
+text = "START"
+
+[node name="Camera2d" type="Camera2D" parent="."]
+current = true
+
+[node name="text1" type="TextEdit" parent="."]
+offset_left = -391.0
+offset_top = -120.0
+offset_right = -19.0
+offset_bottom = -85.0
+placeholder_text = "Text 1"
+
+[node name="text2" type="TextEdit" parent="."]
+offset_left = -391.0
+offset_top = -72.0
+offset_right = -19.0
+offset_bottom = -37.0
+placeholder_text = "Text 2
+"
+
+[node name="text3" type="TextEdit" parent="."]
+offset_left = -391.0
+offset_top = -24.0
+offset_right = -19.0
+offset_bottom = 11.0
+placeholder_text = "Text 3"
+
+[node name="text4" type="TextEdit" parent="."]
+offset_left = -391.0
+offset_top = 24.0
+offset_right = -19.0
+offset_bottom = 59.0
+placeholder_text = "Text 4
+"
+
+[node name="text5" type="TextEdit" parent="."]
+offset_left = -391.0
+offset_top = 72.0
+offset_right = -19.0
+offset_bottom = 107.0
+placeholder_text = "Text 5
+"
+
+[connection signal="button_up" from="Button" to="." method="on_start"]

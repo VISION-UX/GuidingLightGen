@@ -269,7 +269,6 @@ smoothing_enabled = true
 smoothing_speed = 0.563
 script = ExtResource("3_saj8o")
 intensity = 10
-intensityShak = 0.0
 funkyWibble = true
 frameTimerTimeWIBBLE = 60
 
