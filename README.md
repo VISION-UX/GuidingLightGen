@@ -17,6 +17,6 @@ open the build menu
 make sure to install build templates
 
 next set up your settings
-and presse export/save/whatever
+and presse export/save/whateve
 
 done.
