@@ -8,7 +8,7 @@ extends Label
 var line: int = 0
 
 # time limit settings
-@export var time_between_text_changes: float = 1.0
+@export var time_between_text_changes: float = 10.0
 var timer: float = 0.0
 
 # self explanatory
@@ -24,7 +24,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if enabled:
 		timer += delta
-		
+		if timer >= time_between_text_changes:
+				timer = 0.0
+				
+				if line < len(lines):
+					animator.play("fadeEnd")
+					text = lines[line]
+					line += 1
+				else:
+					animator.play("fadeStart")
+					enabled = false
+					visible = false
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			if timer >= time_between_text_changes:
 				timer = 0.0
